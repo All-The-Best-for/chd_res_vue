@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <!-- 针对IE浏览器的一个特殊配置，为了让其以最高的渲染级别渲染页面 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 开启移动端的理想视口 -->
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <!-- 引入第三方的view port -->
+    <meta name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+
+    <!-- 配置页签图标，<%= BASE_URL %>相当于./，是为了解决部署到服务器上后可能会出现的路径问题 -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <!-- 引入第三方样式库文件brootstrap和reset -->
+    <!-- <link rel="stylesheet" href="<%= BASE_URL %>css/bootstrap.css" -->
+    <!--引入reset.css，会导致打包失败 -->
+    <link rel="stylesheet" href="<%= BASE_URL %>css/reset.css"
+
+    <!-- 引入阿里矢量库icon -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_3344697_t6ifedqtvth.css">
+
+    <!-- 配置网页标题 -->
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+  </head>
+  <body>
+    <!-- 如果浏览器不支持js，那么这一标签中的信息就会出现在页面上，作为一个友好提示 -->
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <!-- 容器 -->
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+
+<!-- 引入第三方库解决0.3ms延迟 -->
+<script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+<script>
+    if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+    FastClick.attach(document.body);
+    }, false);
+    }
+    if(!window.Promise) {
+    document.writeln(
+      '<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>'
+      );
+    }
+</script>

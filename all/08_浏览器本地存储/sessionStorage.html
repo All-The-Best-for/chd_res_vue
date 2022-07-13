@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>会话存储</title>
+    </head>
+    <body>
+        <h3>
+            sessionStorage，随着浏览器关闭而消失
+        </h3>
+        <button onclick="saveData()">点我保存一个数据</button><hr/>
+        <button onclick="readData()">点我读取一个数据</button><hr/>
+        <button onclick="deleteData()">点我删除一个数据</button><hr/>
+        <button onclick="deleteAllData()">点我清空数据</button><hr/>
+    </body>
+
+    <script type="text/javascript">
+        let p={name:'zhan',age:19}
+
+        function saveData() {
+            // 存储的一定是字符串形式，不是字符串的数据会被toString后存入
+            sessionStorage.setItem('msg','hello')
+            sessionStorage.setItem('msg2',999)
+            sessionStorage.setItem('person',p)
+            //将对象转换成JSON数据格式存储
+            sessionStorage.setItem('person2',JSON.stringify(p))
+        }
+
+        function readData() {
+            console.log(sessionStorage.getItem('msg2'))
+            console.log(sessionStorage.getItem('person'))
+            console.log(sessionStorage.getItem('person2'))
+
+            //使用JSON方法将JSON格式存入的对象解析成对象再输出
+            const result=sessionStorage.getItem('person2')
+            console.log(JSON.parse(result))
+        }
+
+        function deleteData() {
+            sessionStorage.removeItem('msg')
+        }
+
+        function deleteAllData() {
+            sessionStorage.clear()
+        }
+    </script>
+</html>
