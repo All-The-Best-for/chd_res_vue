@@ -15,10 +15,10 @@
 
     本项目设计以及实现方面尚有很多不足，仅为记录个人实践所用
 
-## [chd餐厅后台管理子系统]()
+## [配套项目 chd餐厅后台管理子系统]()
 
     Vue + Element-UI 实现，适配PC端网页浏览
 
-## [chd餐厅Spring Boot后端]()
+## [配套项目 chd餐厅Spring Boot后端]()
 
     Spring Boot + MyBaties-Plus 实现
